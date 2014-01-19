@@ -34,7 +34,7 @@
                 <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                    <input type="text" class="form-control" placeholder="login" id="login" name="login">
+                    <input type="text" class="form-control" placeholder="Pseudo" id="login" name="login">
                   </div>
                 </div>
                 <div class="form-group">

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII"
-    pageEncoding="US-ASCII"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,7 +21,7 @@
     <div class="container">
       <div class="row header">
         <div class="col-md-4">
-          <img src="img/logo-odecca.png" alt="Odecca" class="img-responsive" />
+          <img src="/img/logo-odecca.png" alt="Odecca" class="img-responsive" />
         </div>
       </div>
 
