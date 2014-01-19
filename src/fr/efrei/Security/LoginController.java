@@ -26,6 +26,14 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession(false);
+	       
+        if (session != null && session.getAttribute("userid") != null) {
+			response.sendRedirect("/Odecca4/app/home");
+			return;
+        }
+        
 		this.getServletContext().getRequestDispatcher("/view/login.jsp").forward(request, response);
 	}
 

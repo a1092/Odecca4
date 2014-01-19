@@ -6,9 +6,9 @@
     <title>Odecca</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Odecca4/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="custom.css" rel="stylesheet">
+    <link href="/Odecca4/custom.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row header">
         <div class="col-md-4">
-          <img src="/img/logo-odecca.png" alt="Odecca" class="img-responsive" />
+          <img src="/Odecca4/img/logo-odecca.png" alt="Odecca" class="img-responsive" />
         </div>
       </div>
 
