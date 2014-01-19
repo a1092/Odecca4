@@ -36,8 +36,8 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Intérimaires <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Voir la liste</a></li>
-              <li><a href="#">Ajouter un nouveau</a></li>
+              <li><a href="/Odecca4/app/interimaire">Voir la liste</a></li>
+              <li><a href="/Odecca4/app/interimaire?action=new">Ajouter un nouveau</a></li>
               <li class="divider"></li>
               <li><a href="#">Nouveau lien</a></li>
             </ul>

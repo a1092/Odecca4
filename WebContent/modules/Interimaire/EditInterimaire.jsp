@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="/view/header.jsp" %>  
 
@@ -29,6 +30,12 @@
 									<label for="nom" class="col-sm-2 control-label">Nom</label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control" name="lastname" placeholder="Nom" value="${interimaire.user.lastname}">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="nom" class="col-sm-2 control-label">Email</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" name="email" placeholder="Email" value="${interimaire.user.email}">
 									</div>
 								</div>
 								<div class="form-group">

@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="/view/header.jsp" %>  
 
@@ -6,7 +7,7 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<ol class="breadcrumb">
-							  <li><a href="interimaire">&larr; Retour à la liste</a></li>
+							  <li><a href="interimaire">&larr; Retour Ã  la liste</a></li>
 							</ol>
 							<h2>${interimaire.user.firstname} ${interimaire.user.lastname} <small><span class="label label-success">${interimaire.statut}</span></small></h2>
 							<div class="panel panel-default">
@@ -20,16 +21,16 @@
 
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h3 class="panel-title">Historiques des missions effectuées</h3>
+									<h3 class="panel-title">Historiques des missions effectuÃ©es</h3>
 								</div>
 								<div class="panel-body">
-									<p><span class="label label-default">1</span> mission a été effectuée par cet intérimaire.</p>
+									<p><span class="label label-default">1</span> mission a Ã©tÃ© effectuÃ©e par cet intÃ©rimaire.</p>
 								</div>
 								<table class="table table-hover">
 									<thead>
 										<th>Entreprise</th>
 										<th>Date</th>
-										<th>Durée</th>
+										<th>DurÃ©e</th>
 										<th>Salaire</th>
 										<th>Actions</th>
 									</thead>
@@ -38,7 +39,7 @@
 											<td>Test</td>
 											<td>01/01/2014 - 10/01/2014</td>
 											<td>10 jours</td>
-											<td><span class="label label-default">1200 €</span></td>
+											<td><span class="label label-default">1200 Â€</span></td>
 											<td>
 												<a href="?action=view&recordid=${interimaire.id}">
 													<button type="button" class="btn btn-info btn-sm">

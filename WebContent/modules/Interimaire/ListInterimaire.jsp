@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="/view/header.jsp" %>  
 
@@ -5,11 +6,11 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h2>Liste des intérimaires</h2>
+							<h2>Liste des intÃ©rimaires</h2>
 							<p class="text-center">
 								<a href="/Odecca4/app/interimaire?action=new">
 									<button type="button" class="btn btn-default">
-										<span class="glyphicon glyphicon-plus"></span> Ajouter un intérimaire
+										<span class="glyphicon glyphicon-plus"></span> Ajouter un intÃ©rimaire
 									</button>
 								</a>
 							</p>
@@ -17,10 +18,10 @@
 								<thead>
 									<th>#</th>
 									<th>Nom</th>
-									<th>Prénom</th>
+									<th>PrÃ©nom</th>
 									<th>Date de naissance</th>
 									<th>Statut</th>
-									<th>Missions effectuées</th>
+									<th>Missions effectuÃ©es</th>
 									<th>Actions</th>
 								</thead>
 								<tbody>
@@ -31,7 +32,7 @@
 										<td>${interimaire.user.lastname}</td>
 										<td>${interimaire.naissance}</td>
 										<td><span class="label label-success">${interimaire.statut}</span></td>
-										<td><span class="badge">${interimaire.nbmissions}</span></td>
+										<td><span class="badge">{interimaire.nbmissions}</span></td>
 										<td>
 											<a href="?action=view&recordid=${interimaire.id}">
 												<button type="button" class="btn btn-info btn-sm">

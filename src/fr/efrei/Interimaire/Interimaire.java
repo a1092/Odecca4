@@ -47,6 +47,28 @@ public class Interimaire implements Serializable {
     @Column(name = "formation")  
     private String formation;
     
+    @Column(name = "statut")  
+    private String statut;
+    
+    public String getStatut() {
+		return statut;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	@Column(name = "adresse")  
+    private String adresse;
+    
     @Column(name = "naissance")  
     @Temporal(TemporalType.DATE) private Date naissance;
         

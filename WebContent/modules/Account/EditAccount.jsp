@@ -22,19 +22,19 @@
 								<div class="form-group">
 									<label for="nom" class="col-sm-2 control-label">Nom</label>
 									<div class="col-sm-10">
-										<input type="text" class="form-control" id="nom" placeholder="Nom" value="${account.nom}">
+										<input type="text" class="form-control" name="nom" placeholder="Nom" value="${account.nom}">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="siret" class="col-sm-2 control-label">SIRET</label>
 									<div class="col-sm-10">
-										<input type="text" class="form-control" id="siret" placeholder="SIRET" value="${account.siret}">
+										<input type="text" class="form-control" name="siret" placeholder="SIRET" value="${account.siret}">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="nom" class="col-sm-2 control-label">Adresse</label>
 									<div class="col-sm-10">
-										<textarea class="form-control" rows="3" id="adresse">${account.adresse}</textarea>
+										<textarea class="form-control" rows="3" name="adresse">${account.adresse}</textarea>
 									</div>
 								</div>								
 								<p class="text-center">

@@ -1,10 +1,11 @@
 package fr.efrei.Interimaire;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -107,6 +108,12 @@ public class InterimaireController extends HttpServlet {
 		
 		if(request.getParameter("id") != null)
 			user.setId(Integer.parseInt(request.getParameter("id")));
+
+		if(user.getId() == 0)  {
+			user.setLogin(new BigInteger(130, new SecureRandom()).toString(32).substring(1, 8));
+			user.setPassword(new BigInteger(130, new SecureRandom()).toString(32).substring(1, 5));
+			user.setRole("INTER");
+		}
 		
 		user.setFirstname(request.getParameter("firstname"));
 		user.setLastname(request.getParameter("lastname"));
