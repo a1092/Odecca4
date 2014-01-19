@@ -45,8 +45,8 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entreprises <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Voir la liste</a></li>
-              <li><a href="#">Ajouter une nouvelle</a></li>
+              <li><a href="/Odecca4/app/account">Voir la liste</a></li>
+              <li><a href="/Odecca4/app/account?action=new">Ajouter une nouvelle</a></li>
               <li class="divider"></li>
               <li><a href="#">Nouveau lien</a></li>
             </ul>
