@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+    version="1.0">
+
+    <persistence-unit name="odecca" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        
+        <properties>
+        	<!-- http://eclipse.org/eclipselink/documentation/2.4/jpa/extensions/p_ddl_generation.htm -->
+           <property name="eclipselink.ddl-generation" value="create-or-extend-tables" /> 
+             <!-- <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />  -->
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
+
+            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="eclipselink.jdbc.url" value="jdbc:mysql://sql.wizel.fr/interim?useUnicode=true&amp;characterEncoding=UTF-8" />
+            <property name="eclipselink.jdbc.user" value="interim" />
+            <property name="eclipselink.jdbc.password" value="adeco" />
+        </properties>
+    </persistence-unit>
+</persistence>
