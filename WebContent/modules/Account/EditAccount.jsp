@@ -1,44 +1,51 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-            
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ include file="/view/header.jsp" %>  
 
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<c:choose>
+							    <c:when test="${account.id == 0}">
+							        <h2>Nouvelle entreprise</h2>
+							    </c:when>
+							    <c:otherwise>
+							        <h2>Modification d'une entreprise</h2>
+							    </c:otherwise>
+							</c:choose> 
+							 
+							<form class="form-horizontal" role="form" method="post" action="/Odecca4/app/account">
+								
+								<input type="hidden" name="action" value="save" />
+								<input type="hidden" name="id" value="${account.id}" />
 
+								<div class="form-group">
+									<label for="nom" class="col-sm-2 control-label">Nom</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="nom" placeholder="Nom" value="${account.nom}">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="siret" class="col-sm-2 control-label">SIRET</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="siret" placeholder="SIRET" value="${account.siret}">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="nom" class="col-sm-2 control-label">Adresse</label>
+									<div class="col-sm-10">
+										<textarea class="form-control" rows="3" id="adresse">${account.adresse}</textarea>
+									</div>
+								</div>								
+								<p class="text-center">
+									<button type="submit" class="btn btn-success">
+										<span class="glyphicon glyphicon-ok"></span> Enregistrer
+									</button>
+								</p>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 
-<c:choose>
-    <c:when test="${account.id == 0}">
-        <h1>Nouvelle entreprise</h1>
-    </c:when>
-    <c:otherwise>
-        <h1>Modification d'une entreprise</h1>
-    </c:otherwise>
-</c:choose> 
- 
-<form method="POST" action="/Odecca4/app/account">
-	
-	<input type="hidden" name="action" value="save" />
-	<input type="hidden" name="id" value="${account.id}" />
-	<div>
-		<label>Nom</label>
-		<input type="text" name="nom" value="${account.nom}" />
-	</div>
-	<div>
-		<label>Siret</label>
-		<input type="text" name="siret" value="${account.siret}" />
-	</div>
-	<div>
-		<label>Adresse</label>
-		<textarea name="adresse">${account.adresse}</textarea>
-	</div>
-	
-	<input type="submit" value="Enregistrer" />
-</form>
-</body>
-</html>
+<%@ include file="/view/footer.jsp" %>
