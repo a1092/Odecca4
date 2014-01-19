@@ -39,7 +39,7 @@
               <li><a href="/Odecca4/app/interimaire">Voir la liste</a></li>
               <li><a href="/Odecca4/app/interimaire?action=new">Ajouter un nouveau</a></li>
               <li class="divider"></li>
-              <li><a href="#">Nouveau lien</a></li>
+              <li><a href="/Odecca4/app/competence">Gérer les compétences</a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -57,7 +57,6 @@
               <li><a href="#">Voir la liste</a></li>
               <li><a href="#">Ajouter une nouvelle</a></li>
               <li class="divider"></li>
-              <li><a href="#">Gérer les compétences</a></li>
               <li><a href="#">Gérer les secteurs</a></li>
             </ul>
           </li>

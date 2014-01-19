@@ -62,4 +62,14 @@
     <servlet-name>InterimaireController</servlet-name>
     <url-pattern>/app/interimaire</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CompetenceController</display-name>
+    <servlet-name>CompetenceController</servlet-name>
+    <servlet-class>fr.efrei.Interimaire.CompetenceController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CompetenceController</servlet-name>
+    <url-pattern>/app/competence</url-pattern>
+  </servlet-mapping>
 </web-app>
