@@ -2,9 +2,6 @@ package fr.efrei.Security;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 import fr.efrei.System.Bean;
 
 public class UserManager extends Bean {

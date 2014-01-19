@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import fr.efrei.Security.User;
+
 @Entity  
 @Table(name = "contacts")
 @NamedQueries({
@@ -27,17 +29,10 @@ public class Contact {
     @PrimaryKeyJoinColumn
     private Contact contact;
 	
-	@Column(name = "firstname")
-    private String firstname;
-	
-	@Column(name = "lastname")
-    private String lastname;
 	
 	@Column(name = "phone")
     private String phone;
-	
-	@Column(name = "email")
-    private String email;
+
 
 	public int getId() {
 		return id;
@@ -55,22 +50,6 @@ public class Contact {
 		this.contact = contact;
 	}
 
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -79,11 +58,4 @@ public class Contact {
 		this.phone = phone;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 }

@@ -23,7 +23,7 @@ public class HomeController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/view/home.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/modules/Home/Dashboard.jsp").forward(request, response);
 	}
 
 	/**

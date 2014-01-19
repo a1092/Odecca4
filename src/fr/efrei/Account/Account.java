@@ -14,7 +14,9 @@ import javax.persistence.Table;
 @Entity  
 @Table(name = "accounts")
 @NamedQueries({
-    @NamedQuery(name = "Account.findAll", query = "SELECT e FROM Account e")})
+	 @NamedQuery(name = "Account.findAll", query = "SELECT e FROM Account e"),
+	 @NamedQuery(name = "Account.findById", query = "SELECT e FROM Account e WHERE e.id = :accountid ")})
+
 public class Account implements Serializable {
 
         /**

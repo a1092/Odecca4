@@ -47,4 +47,15 @@
     <servlet-name>LogoutController</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AccountController</display-name>
+    <servlet-name>AccountController</servlet-name>
+    <servlet-class>fr.efrei.Account.AccountController</servlet-class>
+   
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccountController</servlet-name>
+    <url-pattern>/app/account</url-pattern>
+  </servlet-mapping>
 </web-app>

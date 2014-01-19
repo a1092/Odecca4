@@ -7,8 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome in your application !
+	Welcome in your application !
+	
+	<a href="/Odecca4/logout">Logout</a>
 
-<a href="/Odecca4/logout">Logout</a>
+	<ul>
+		<li><a href="account">Entreprises</a>
+	</ul>
 </body>
 </html>

@@ -1,7 +1,6 @@
 package fr.efrei.Security;
 
 import java.io.IOException;
-import java.util.Date;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;

@@ -2,7 +2,7 @@
     <wb-module deploy-name="Odecca4">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="Odecca4"/>
         <property name="java-output-path" value="/Odecca4/build/classes"/>
+        <property name="context-root" value="Odecca4"/>
     </wb-module>
 </project-modules>
