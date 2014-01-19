@@ -57,7 +57,7 @@
               <li><a href="#">Voir la liste</a></li>
               <li><a href="#">Ajouter une nouvelle</a></li>
               <li class="divider"></li>
-              <li><a href="#">Gérer les secteurs</a></li>
+              <li><a href="/Odecca4/app/secteur">Gérer les secteurs</a></li>
             </ul>
           </li>
         </ul>
