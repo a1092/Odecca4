@@ -1,4 +1,6 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+    pageEncoding="utf-8" %>
+    
 <!DOCTYPE html>
 <html>
   <head>
@@ -62,8 +64,8 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><p class="navbar-text">Bonjour John Doe !</p></li>
-          <li><a href="#">Déconnexion</a></li>
+          <li><p class="navbar-text">Welcome, ${sessionScope.user.firstname} ${sessionScope.user.lastname} !</p></li>
+          <li><a href="/Odecca4/logout">Déconnexion</a></li>
         </ul>
       </div>
     </nav>

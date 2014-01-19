@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet {
 		
 		HttpSession session = request.getSession(false);
 	       
-        if (session != null && session.getAttribute("userid") != null) {
+        if (session != null && session.getAttribute("user") != null) {
 			response.sendRedirect("/Odecca4/app/home");
 			return;
         }
@@ -50,14 +50,15 @@ public class LoginController extends HttpServlet {
 			u = user.authenticate(login, password);
 		} catch (Exception e) {
 			
-			System.out.println("Error in servlet Login : "+e.getMessage());
+			request.setAttribute("error", e.getMessage());
 			this.getServletContext().getRequestDispatcher("/view/login.jsp").forward(request, response);
 			return;
 		}
 		
 		HttpSession session = request.getSession(true);
 		session.setMaxInactiveInterval(30*60);
-		session.setAttribute("userid", u.getId());
+		u.setPassword(null);
+		session.setAttribute("user", u);
 		
 		response.sendRedirect("/Odecca4/app/home");
 	}

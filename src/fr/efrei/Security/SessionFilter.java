@@ -22,7 +22,7 @@ public class SessionFilter implements Filter {
         
         HttpSession session = request.getSession(false);
        
-        if (session == null || session.getAttribute("userid") == null) {
+        if (session == null || session.getAttribute("user") == null) {
            
         	System.out.println("Not authenticated.");
         	response.sendRedirect("/Odecca4/login");
