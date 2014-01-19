@@ -27,8 +27,8 @@
 									<c:forEach var="interimaire" items="${interimairelist}" >
 									<tr>
 										<td>${interimaire.id}</td>
-										<td>${interimaire.nom}</td>
-										<td>${interimaire.prenom}</td>
+										<td>${interimaire.user.firstname}</td>
+										<td>${interimaire.user.lastname}</td>
 										<td>${interimaire.naissance}</td>
 										<td><span class="label label-success">${interimaire.statut}</span></td>
 										<td><span class="badge">${interimaire.nbmissions}</span></td>
@@ -58,4 +58,4 @@
 				</div>
 			</div>
 
-<%@ include file="/view/footer.jsp" %> 
+<%@ include file="/view/footer.jsp" %>

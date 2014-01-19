@@ -22,36 +22,51 @@
 								<div class="form-group">
 									<label for="prenom" class="col-sm-2 control-label">Prénom</label>
 									<div class="col-sm-10">
-										<input type="text" class="form-control" id="prenom" placeholder="Prénom" value="${interimaire.prenom}">
+										<input type="text" class="form-control" name="firstname" placeholder="Prénom" value="${interimaire.user.firstname}">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="nom" class="col-sm-2 control-label">Nom</label>
 									<div class="col-sm-10">
-										<input type="text" class="form-control" id="nom" placeholder="Nom" value="${interimaire.nom}">
+										<input type="text" class="form-control" name="lastname" placeholder="Nom" value="${interimaire.user.lastname}">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="naissance" class="col-sm-2 control-label">Date de naissance</label>
 									<div class="col-sm-10">
-										<input type="text" class="form-control" id="siret" placeholder="JJ/MM/AAAA" value="${interimaire.naissance}">
+										<input type="text" class="form-control" name="naissance" placeholder="JJ/MM/AAAA" value="${interimaire.naissance}">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="nom" class="col-sm-2 control-label">Adresse</label>
 									<div class="col-sm-10">
-										<textarea class="form-control" rows="3" id="adresse">${interimaire.adresse}</textarea>
+										<textarea class="form-control" rows="3" name="adresse">${interimaire.adresse}</textarea>
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="competences" class="col-sm-2 control-label">Compétences</label>
 									<div class="col-sm-10">
-										<select multiple class="form-control">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
+										<select multiple class="form-control" name="qualification">
+											<c:forEach var="competence" items="${competenceslist}" >
+			
+												<c:set var="contains" value="false" />
+												<c:forEach var="qualification" items="${interimaire.qualification}">
+													<c:if test="${qualification eq competence}">
+												  	  <c:set var="contains" value="true" />
+												  	</c:if>
+												</c:forEach>
+												
+												<c:choose>
+											     	 <c:when test="${contains}">
+												    	<option value="${competence.id}" selected>${competence.nom}</option>
+												     </c:when>
+												
+												      <c:otherwise>
+												      	<option value="${competence.id}" >${competence.nom}</option>
+												      </c:otherwise>
+												</c:choose>
+												
+											</c:forEach>
 										</select>
 										<span class="help-block"><span class="badge">Ctrl</span> + clic pour sélectionner plusieurs compétences</span>
 									</div>

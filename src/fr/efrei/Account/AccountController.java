@@ -22,7 +22,6 @@ public class AccountController extends HttpServlet {
      */
     public AccountController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

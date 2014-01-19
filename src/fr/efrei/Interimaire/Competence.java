@@ -14,14 +14,16 @@ import javax.persistence.Table;
 @Entity  
 @Table(name = "competences")
 @NamedQueries({
-    @NamedQuery(name = "Competence.findAll", query = "SELECT c FROM Competence c"), 
-	@NamedQuery(name = "Competence.findById", query = "SELECT c FROM Competence c WHERE c.id = :competenceid ")})
-
+	@NamedQuery(name = "Competence.findAll", query = "SELECT c FROM Competence c"),
+	@NamedQuery(name = "Competence.findById", query = "SELECT c FROM Competence c WHERE c.id = :competenceid")})
 public class Competence implements Serializable {
 
-    private static final long serialVersionUID = -6136945690486619001L;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1723470002798722298L;
 
-    @Id  
+	@Id  
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column(name = "competenceid")  
     private int id;

@@ -35,9 +35,9 @@ public class AccountManager extends Bean {
 		return em.createNamedQuery("Account.findById", Account.class).setParameter("accountid", id).getSingleResult();
 	}
 	
-	@SuppressWarnings("unchecked")
+	
 	public List<Account> getAllAccount() throws Exception {
-		return em.createNamedQuery("Account.findAll").getResultList();
+		return em.createNamedQuery("Account.findAll", Account.class).getResultList();
 	}
 	
 	

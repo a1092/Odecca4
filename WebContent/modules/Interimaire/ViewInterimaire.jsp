@@ -8,7 +8,7 @@
 							<ol class="breadcrumb">
 							  <li><a href="interimaire">&larr; Retour à la liste</a></li>
 							</ol>
-							<h2>${interimaire.prenom} ${interimaire.nom} <small><span class="label label-success">${interimaire.statut}</span></small></h2>
+							<h2>${interimaire.user.firstname} ${interimaire.user.lastname} <small><span class="label label-success">${interimaire.statut}</span></small></h2>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h3 class="panel-title">Informations personnelles</h3>
