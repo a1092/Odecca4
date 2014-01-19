@@ -54,8 +54,8 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Missions <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Voir la liste</a></li>
-              <li><a href="#">Ajouter une nouvelle</a></li>
+              <li><a href="/Odecca4/app/mission">Voir la liste</a></li>
+              <li><a href="/Odecca4/app/mission?action=new">Ajouter une nouvelle</a></li>
               <li class="divider"></li>
               <li><a href="/Odecca4/app/secteur">Gérer les secteurs</a></li>
             </ul>

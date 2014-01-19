@@ -34,9 +34,9 @@ public class SecteurManager extends Bean {
 	public Secteur getSecteurById(int id) {
 		return em.createNamedQuery("Secteur.findById", Secteur.class).setParameter("secteurid", id).getSingleResult();
 	}
-	
-	@SuppressWarnings("unchecked")
+
+
 	public List<Secteur> getAllSecteur() throws Exception {
-		return em.createNamedQuery("Secteur.findAll").getResultList();
+		return em.createNamedQuery("Secteur.findAll", Secteur.class).getResultList();
 	}
 }
