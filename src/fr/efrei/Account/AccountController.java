@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.efrei.Security.UserManager;
-
 /**
  * Servlet implementation class AccountController
  */
@@ -49,9 +47,6 @@ public class AccountController extends HttpServlet {
 				if(request.getParameter("recordid") == null)
 					throw new ServletException("Not record found.");
 				int recordid = Integer.parseInt(request.getParameter("recordid"));
-				
-				Account acc = am.getAccountById(recordid);
-				
 				
 				request.setAttribute("account", am.getAccountById(recordid));
 				this.getServletContext().getRequestDispatcher("/modules/Account/EditAccount.jsp").forward(request, response);

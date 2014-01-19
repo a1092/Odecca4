@@ -12,8 +12,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
-import fr.efrei.Security.User;
-
 @Entity  
 @Table(name = "contacts")
 @NamedQueries({

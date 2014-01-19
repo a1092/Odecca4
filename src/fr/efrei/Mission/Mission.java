@@ -2,6 +2,7 @@ package fr.efrei.Mission;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -22,13 +23,14 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import fr.efrei.Account.Account;
-import fr.efrei.Interimaire.Interimaire;
 import fr.efrei.Interimaire.Competence;
+import fr.efrei.Interimaire.Interimaire;
 
 @Entity  
 @Table(name = "missions")
 @NamedQueries({
-    @NamedQuery(name = "Missions.findAll", query = "SELECT m FROM Mission m")})
+	@NamedQuery(name = "Mission.findAll", query = "SELECT m FROM Mission m"),
+	@NamedQuery(name = "Mission.findById", query = "SELECT m FROM Mission m WHERE m.id = :missionid")})
 public class Mission implements Serializable {
 
     /**
@@ -77,82 +79,101 @@ public class Mission implements Serializable {
             joinColumns = @JoinColumn(name = "missionid"),
             inverseJoinColumns = @JoinColumn(name = "competenceid")
     )
-    private Set<Competence> requis;
+    private Set<Competence> competences = new HashSet<Competence>();;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	public Secteur getSecteur() {
+		return secteur;
+	}
+
+	public void setSecteur(Secteur secteur) {
+		this.secteur = secteur;
+	}
+
+	public String getIntitule() {
+		return intitule;
+	}
+
+	public void setIntitule(String intitule) {
+		this.intitule = intitule;
+	}
+
+	public Date getDebut() {
+		return debut;
+	}
+
+	public void setDebut(Date debut) {
+		this.debut = debut;
+	}
+
+	public Date getFin() {
+		return fin;
+	}
+
+	public void setFin(Date fin) {
+		this.fin = fin;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getLieu() {
+		return lieu;
+	}
+
+	public void setLieu(String lieu) {
+		this.lieu = lieu;
+	}
+
+	public int getTarif() {
+		return tarif;
+	}
+
+	public void setTarif(int tarif) {
+		this.tarif = tarif;
+	}
+
+	public Interimaire getInterimaire() {
+		return interimaire;
+	}
+
+	public void setInterimaire(Interimaire interimaire) {
+		this.interimaire = interimaire;
+	}
+
+	public Set<Competence> getCompetences() {
+		return competences;
+	}
+
+	public void setCompetences(Set<Competence> competences) {
+		this.competences = competences;
+	}
+	
+	public void addQualification(Competence qualification) {
+		if(qualification == null)
+			return;
+		
+		this.competences.add(qualification);
+	}
     
-    public int getId() {
-            return id;
-    }
-    public void setId(int id) {
-            this.id = id;
-    }
-
-    public Account getAccount() {
-            return account;
-    }
-    public void setEntreprise(Account account) {
-            this.account = account;
-    }
-
-    public Secteur getSecteur() {
-            return secteur;
-    }
-    public void setSecteur(Secteur secteur) {
-            this.secteur = secteur;
-    }
-
-    public String getIntitule() {
-            return intitule;
-    }
-    public void setIntitule(String intitule) {
-            this.intitule = intitule;
-    }
-
-    public Date getDebut() {
-            return debut;
-    }
-    public void setDebut(Date debut) {
-            this.debut = debut;
-    }
-
-    public Date getFin() {
-            return fin;
-    }
-    public void setFin(Date fin) {
-            this.fin = fin;
-    }
-
-    public String getDescription() {
-            return description;
-    }
-    public void setDescription(String description) {
-            this.description = description;
-    }
-
-    public String getLieu() {
-            return lieu;
-    }
-    public void setLieu(String lieu) {
-            this.lieu = lieu;
-    }
-
-    public int getTarif() {
-            return tarif;
-    }
-    public void setTarif(int tarif) {
-            this.tarif = tarif;
-    }
-
-    public Interimaire getInterimaire() {
-            return interimaire;
-    }
-    public void setInterimaire(Interimaire interimaire) {
-            this.interimaire = interimaire;
-    }
-    
-    public Set<Competence> getRequis() {
-            return requis;
-    }
-    public void setRequis(Set<Competence> requis) {
-            this.requis = requis;
-    }
 }

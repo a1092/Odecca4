@@ -82,4 +82,14 @@
     <servlet-name>SecteurController</servlet-name>
     <url-pattern>/app/secteur</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MissionController</display-name>
+    <servlet-name>MissionController</servlet-name>
+    <servlet-class>fr.efrei.Mission.MissionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MissionController</servlet-name>
+    <url-pattern>/app/mission</url-pattern>
+  </servlet-mapping>
 </web-app>
