@@ -72,4 +72,14 @@
     <servlet-name>CompetenceController</servlet-name>
     <url-pattern>/app/competence</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SecteurController</display-name>
+    <servlet-name>SecteurController</servlet-name>
+    <servlet-class>fr.efrei.Mission.SecteurController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SecteurController</servlet-name>
+    <url-pattern>/app/secteur</url-pattern>
+  </servlet-mapping>
 </web-app>

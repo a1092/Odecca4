@@ -14,12 +14,10 @@ import javax.persistence.Table;
 @Entity  
 @Table(name = "secteurs")
 @NamedQueries({
-    @NamedQuery(name = "Secteurs.findAll", query = "SELECT s FROM Secteur s")})
+    @NamedQuery(name = "Secteur.findAll", query = "SELECT s FROM Secteur s"),
+    @NamedQuery(name = "Secteur.findById", query = "SELECT s FROM Secteur s WHERE s.id = :secteurid")})
 public class Secteur implements Serializable {
 
-    /**
-     * 
-     */
     private static final long serialVersionUID = -5839919407002033840L;
 
     @Id  
