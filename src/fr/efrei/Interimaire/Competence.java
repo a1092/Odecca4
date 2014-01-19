@@ -14,7 +14,8 @@ import javax.persistence.Table;
 @Entity  
 @Table(name = "competences")
 @NamedQueries({
-    @NamedQuery(name = "Competence.findAll", query = "SELECT c FROM Competence c")})
+	@NamedQuery(name = "Competence.findAll", query = "SELECT c FROM Competence c"),
+	@NamedQuery(name = "Competence.findById", query = "SELECT c FROM Competence c WHERE c.id = :competenceid")})
 public class Competence implements Serializable {
 
     private static final long serialVersionUID = -6136945690486619001L;
