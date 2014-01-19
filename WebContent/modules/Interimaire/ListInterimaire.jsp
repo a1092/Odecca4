@@ -6,11 +6,11 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h2>Liste des intÃ©rimaires</h2>
+							<h2>Liste des intérimaires</h2>
 							<p class="text-center">
 								<a href="/Odecca4/app/interimaire?action=new">
 									<button type="button" class="btn btn-default">
-										<span class="glyphicon glyphicon-plus"></span> Ajouter un intÃ©rimaire
+										<span class="glyphicon glyphicon-plus"></span> Ajouter un intérimaire
 									</button>
 								</a>
 							</p>
@@ -18,10 +18,10 @@
 								<thead>
 									<th>#</th>
 									<th>Nom</th>
-									<th>PrÃ©nom</th>
+									<th>Prénom</th>
 									<th>Date de naissance</th>
 									<th>Statut</th>
-									<th>Missions effectuÃ©es</th>
+									<th>Missions effectuées</th>
 									<th>Actions</th>
 								</thead>
 								<tbody>
