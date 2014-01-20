@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -43,18 +44,16 @@ public class Mission implements Serializable {
     @Column(name = "missionid")  
     private int id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @ManyToOne (cascade = CascadeType.ALL)
     private Account account;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @ManyToOne(cascade = CascadeType.ALL)
     private Secteur secteur;
     
     @Column(name = "intitule")
     private String intitule;
     
-    @Column(name = "date")
+    @Column(name = "debut")
     @Temporal(TemporalType.DATE) private Date debut;
     
     @Column(name = "fin")
@@ -69,9 +68,6 @@ public class Mission implements Serializable {
     @Column(name = "tarif")
     private int tarif;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private Interimaire interimaire;
 
     @OneToMany
     @JoinTable(
@@ -151,14 +147,6 @@ public class Mission implements Serializable {
 
 	public void setTarif(int tarif) {
 		this.tarif = tarif;
-	}
-
-	public Interimaire getInterimaire() {
-		return interimaire;
-	}
-
-	public void setInterimaire(Interimaire interimaire) {
-		this.interimaire = interimaire;
 	}
 
 	public Set<Competence> getCompetences() {

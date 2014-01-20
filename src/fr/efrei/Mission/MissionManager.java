@@ -61,4 +61,8 @@ public class MissionManager extends Bean {
 	public List<Secteur> getAllSecteur() throws Exception {
 		return em.createNamedQuery("Secteur.findAll", Secteur.class).getResultList();
 	}
+	
+	public Account getAccountById(int id) {
+		return em.createNamedQuery("Account.findById", Account.class).setParameter("accountid", id).getSingleResult();
+	}
 }

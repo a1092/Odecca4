@@ -132,6 +132,7 @@ public class MissionController extends HttpServlet {
 		mis.setDescription(request.getParameter("description"));
 		mis.setTarif(Integer.parseInt(request.getParameter("tarif")));
 		mis.setSecteur(mm.getSecteurById(Integer.parseInt(request.getParameter("secteur"))));
+		mis.setAccount(mm.getAccountById(Integer.parseInt(request.getParameter("account"))));
 		
 		
 		String[] qualification = request.getParameterValues("competences");
