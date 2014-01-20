@@ -123,11 +123,12 @@ public class InterimaireController extends HttpServlet {
 		
 		im.save(user);
 		
+		inte.setAdresse(request.getParameter("adresse"));
 		inte.setId(user.getId());
 		inte.setUser(user);
 		inte.setFormation(request.getParameter("formation"));
 		
-		DateFormat formatter = new SimpleDateFormat("dd/mm/yyyy");
+		DateFormat formatter = new SimpleDateFormat("dd/M/yyyy");
 	
 		try {
 			inte.setNaissance(formatter.parse(request.getParameter("naissance")));

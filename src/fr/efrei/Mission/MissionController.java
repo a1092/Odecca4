@@ -186,7 +186,7 @@ public class MissionController extends HttpServlet {
 		}
 		
 		
-		DateFormat formatter = new SimpleDateFormat("dd/mm/yyyy");
+		DateFormat formatter = new SimpleDateFormat("dd/M/yyyy");
 		
 		try {
 			mis.setDebut(formatter.parse(request.getParameter("debut")));

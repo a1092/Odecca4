@@ -61,7 +61,9 @@
               <li><a href="/Odecca4/app/mission">Voir la liste</a></li>
               <li><a href="/Odecca4/app/mission?action=new">Ajouter une nouvelle</a></li>
              </c:if>
+             <c:if test="${sessionScope.user.role == 'INTER'}">
               <li><a href="/Odecca4/app/mission?action=postuler">Postuler à une mission</a></li>
+             </c:if>
              <c:if test="${sessionScope.user.role != 'INTER'}">
               <li class="divider"></li>
               <li><a href="/Odecca4/app/secteur">Gérer les secteurs</a></li>

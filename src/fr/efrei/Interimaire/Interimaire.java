@@ -60,13 +60,7 @@ public class Interimaire implements Serializable {
 		this.statut = statut;
 	}
 
-	public String getAdresse() {
-		return adresse;
-	}
-
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
+	
 
 	@Column(name = "adresse")  
     private String adresse;
@@ -87,6 +81,14 @@ public class Interimaire implements Serializable {
     
 	public int getId() {
 		return id;
+	}
+
+	public List<Postulation> getPostulations() {
+		return postulations;
+	}
+
+	public void setPostulations(List<Postulation> postulations) {
+		this.postulations = postulations;
 	}
 
 	public void setId(int id) {
@@ -144,6 +146,14 @@ public class Interimaire implements Serializable {
 			return null;
 		
 		return user.getLastname();
+	}
+	
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
     
    
