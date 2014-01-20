@@ -21,6 +21,10 @@
   										<dd>${interimaire.user.login}</dd>
 									</dl>
 									<dl class="dl-horizontal">
+  										<dt>Password</dt>
+  										<dd>${interimaire.user.password}</dd>
+									</dl>
+									<dl class="dl-horizontal">
   										<dt>Email</dt>
   										<dd>${interimaire.user.email}</dd>
 									</dl>
@@ -36,8 +40,9 @@
   										<dt>Qualification</dt>
   										<dd>
   											<ul class="list-unstyled">
-  												<li>${mission.competences}</li>
-  												<li>${mission.competences}</li>
+  												<c:forEach var="competence" items="${interimaire.qualification}" >
+  													<li>${competence.nom}</li>
+  												</c:forEach>
   											</ul>
   										</dd>
 									</dl>

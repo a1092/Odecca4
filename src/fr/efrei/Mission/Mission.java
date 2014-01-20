@@ -3,6 +3,7 @@ package fr.efrei.Mission;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -17,21 +18,19 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import fr.efrei.Account.Account;
 import fr.efrei.Interimaire.Competence;
-import fr.efrei.Interimaire.Interimaire;
 
 @Entity  
 @Table(name = "missions")
 @NamedQueries({
 	@NamedQuery(name = "Mission.findAll", query = "SELECT m FROM Mission m"),
-	@NamedQuery(name = "Mission.findById", query = "SELECT m FROM Mission m WHERE m.id = :missionid")})
+	@NamedQuery(name = "Mission.findById", query = "SELECT m FROM Mission m WHERE m.id = :missionid"),
+	@NamedQuery(name = "Mission.findByStatut", query = "SELECT m FROM Mission m WHERE m.statut = :statut")})
 public class Mission implements Serializable {
 
     /**
@@ -68,18 +67,35 @@ public class Mission implements Serializable {
     @Column(name = "tarif")
     private int tarif;
 
+    @Column(name = "statut")
+    private String statut;
 
-    @OneToMany
+   
+
+	@OneToMany
     @JoinTable(
             name="competence_mission",
             joinColumns = @JoinColumn(name = "missionid"),
             inverseJoinColumns = @JoinColumn(name = "competenceid")
     )
-    private Set<Competence> competences = new HashSet<Competence>();;
+    private Set<Competence> competences = new HashSet<Competence>();
 
+    @OneToMany(mappedBy="mission") private Set<Postulation> postulations = new HashSet<Postulation>();
+    
 	public int getId() {
 		return id;
 	}
+
+
+	public Set<Postulation> getPostulations() {
+		return postulations;
+	}
+
+
+	public void setPostulations(Set<Postulation> postulations) {
+		this.postulations = postulations;
+	}
+
 
 	public void setId(int id) {
 		this.id = id;
@@ -162,6 +178,14 @@ public class Mission implements Serializable {
 			return;
 		
 		this.competences.add(qualification);
+	}
+	
+	 public String getStatut() {
+		return statut;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
     
 }

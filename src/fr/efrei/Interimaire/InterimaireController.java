@@ -113,6 +113,8 @@ public class InterimaireController extends HttpServlet {
 			user.setLogin(new BigInteger(130, new SecureRandom()).toString(32).substring(1, 8));
 			user.setPassword(new BigInteger(130, new SecureRandom()).toString(32).substring(1, 5));
 			user.setRole("INTER");
+		} else {
+			user = im.getInterimaireById(user.getId()).getUser();
 		}
 		
 		user.setFirstname(request.getParameter("firstname"));

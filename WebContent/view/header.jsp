@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"
     pageEncoding="utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html>
 <html>
@@ -33,6 +34,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Accueil</a></li>
+          <c:if test="${sessionScope.user.role != 'INTER'}">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Intérimaires <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -42,6 +44,8 @@
               <li><a href="/Odecca4/app/competence">Gérer les compétences</a></li>
             </ul>
           </li>
+          </c:if>
+          <c:if test="${sessionScope.user.role != 'INTER'}">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entreprises <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -49,13 +53,19 @@
               <li><a href="/Odecca4/app/account?action=new">Ajouter une nouvelle</a></li>
             </ul>
           </li>
+          </c:if>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Missions <b class="caret"></b></a>
             <ul class="dropdown-menu">
+            <c:if test="${sessionScope.user.role != 'INTER'}">
               <li><a href="/Odecca4/app/mission">Voir la liste</a></li>
               <li><a href="/Odecca4/app/mission?action=new">Ajouter une nouvelle</a></li>
+             </c:if>
+              <li><a href="/Odecca4/app/mission?action=postuler">Postuler à une mission</a></li>
+             <c:if test="${sessionScope.user.role != 'INTER'}">
               <li class="divider"></li>
               <li><a href="/Odecca4/app/secteur">Gérer les secteurs</a></li>
+             </c:if>
             </ul>
           </li>
         </ul>

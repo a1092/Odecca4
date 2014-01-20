@@ -8,6 +8,8 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h2>Liste des missions</h2>
+							
+							<c:if test="${sessionScope.user.role != 'INTER'}">
 							<p class="text-center">
 								<a href="/Odecca4/app/mission?action=new">
 									<button type="button" class="btn btn-default">
@@ -15,6 +17,7 @@
 									</button>
 								</a>
 							</p>
+							</c:if>
 							<table class="table table-hover">
 								<thead>
 									<th>#</th>
@@ -22,7 +25,7 @@
 									<th>Secteur</th>
 									<th>Entreprise</th>
 									<th>Date</th>
-									<th>Intérimaire</th>
+									<th>Statut</th>
 									<th>Actions</th>
 								</thead>
 								<tbody>
@@ -36,8 +39,18 @@
 											<fmt:formatDate value="${mission.debut}" pattern="dd/MM/yyyy" /> -
 											<fmt:formatDate value="${mission.fin}" pattern="dd/MM/yyyy" />
 										</td>
-										<td>${interimaire.user.firstname} ${interimaire.user.lastname}</td>
+										<td>${mission.statut}</td>
 										<td>
+											<c:if test="${sessionScope.user.role == 'INTER'}">
+											<c:forEach var="postulation" items="${mission.postulations}" >
+												${postulation.interimaire.id }
+											</c:forEach>
+											<a href="?action=postuler&recordid=${mission.id}&postuler=true">
+												<button type="button" class="btn btn-success btn-sm">
+													Postuler
+												</button>
+											</a>
+											</c:if>
 											<a href="?action=view&recordid=${mission.id}">
 												<button type="button" class="btn btn-info btn-sm">
 													<span class="glyphicon glyphicon-eye-open"></span>

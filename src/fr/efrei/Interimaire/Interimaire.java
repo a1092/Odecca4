@@ -3,6 +3,7 @@ package fr.efrei.Interimaire;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -20,6 +21,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import fr.efrei.Mission.Postulation;
 import fr.efrei.Security.User;
 
 @Entity  
@@ -80,6 +82,9 @@ public class Interimaire implements Serializable {
     )
     private Set<Competence> qualification = new HashSet<Competence>();
 
+    
+   @OneToMany(mappedBy="interimaire") private List<Postulation> postulations;
+    
 	public int getId() {
 		return id;
 	}
