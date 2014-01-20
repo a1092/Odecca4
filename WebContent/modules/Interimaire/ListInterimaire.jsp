@@ -21,8 +21,6 @@
 									<th>Nom</th>
 									<th>Prénom</th>
 									<th>Date de naissance</th>
-									<th>Statut</th>
-									<th>Missions effectuées</th>
 									<th>Actions</th>
 								</thead>
 								<tbody>
@@ -32,8 +30,6 @@
 										<td>${interimaire.user.firstname}</td>
 										<td>${interimaire.user.lastname}</td>
 										<td><fmt:formatDate value="${interimaire.naissance}" pattern="dd/MM/yyyy" /></td>
-										<td><span class="label label-success">${interimaire.statut}</span></td>
-										<td><span class="badge">{interimaire.nbmissions}</span></td>
 										<td>
 											<a href="?action=view&recordid=${interimaire.id}">
 												<button type="button" class="btn btn-info btn-sm">
