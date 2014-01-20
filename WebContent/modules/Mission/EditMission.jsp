@@ -103,7 +103,7 @@
 								</div>
 								
 								<div class="form-group">
-									<label for="description" class="col-sm-2 control-label">description</label>
+									<label for="description" class="col-sm-2 control-label">Description</label>
 									<div class="col-sm-10">
 										<textarea name="description" id="description" class="form-control" rows="10">${mission.description}</textarea>
 									</div>
@@ -111,7 +111,7 @@
 								
 								
 								<div class="form-group">
-									<label for="competences" class="col-sm-2 control-label">Compétences</label>
+									<label for="competences" class="col-sm-2 control-label">Compétences requises</label>
 									<div class="col-sm-10">
 										<select multiple class="form-control" name="competences" id="competences">
 											<c:forEach var="competence" items="${competenceslist}" >
