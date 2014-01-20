@@ -23,7 +23,7 @@
 								<div class="form-group">
 									<label for="nom" class="col-sm-2 control-label">Entreprise</label>
 									<div class="col-sm-10">
-										<select name="account">
+										<select name="account" id="account" class="form-control">
 											<option></option>
 											<c:forEach var="account" items="${accountlist}" >
 												
@@ -47,9 +47,9 @@
 								<div class="form-group">
 									<label for="secteur" class="col-sm-2 control-label">Secteur</label>
 									<div class="col-sm-10">
-										<select name="secteur">
+										<select name="secteur" id="secteur" class="form-control">
 											<option></option>
-											<c:forEach var="secteur" items="${secteurlist}" >
+											<c:forEach var="secteur" items="${secteurlist}">
 												
 												<c:choose>
 											     	 <c:when test="${mission.secteur.id eq secteur.id}">
@@ -69,39 +69,51 @@
 								
 								<div class="form-group">
 									<label for="debut" class="col-sm-2 control-label">Debut</label>
-									<input type="text" name="debut" value="${mission.debut}" />
+									<div class="col-sm-10">
+										<input type="text" name="debut" id="debut" class="form-control" value="${mission.debut}" />
+									</div>
 								</div>
 								
 								<div class="form-group">
 									<label for="fin" class="col-sm-2 control-label">Fin</label>
-									<input type="text" name="fin" value="${mission.fin}" />
+									<div class="col-sm-10">
+										<input type="text" name="fin" id="fin" class="form-control" value="${mission.fin}" />
+									</div>
 								</div>
 								
 								<div class="form-group">
 									<label for="intitule" class="col-sm-2 control-label">Intitulé</label>
-									<input type="text" name="intitule" value="${mission.intitule}" />
+									<div class="col-sm-10">
+										<input type="text" name="intitule" id="intitule" class="form-control" value="${mission.intitule}" />
+									</div>
 								</div>
 								
 								<div class="form-group">
 									<label for="lieu" class="col-sm-2 control-label">Lieu</label>
-									<input type="text" name="lieu" value="${mission.lieu}" />
+									<div class="col-sm-10">
+										<input type="text" name="lieu" id="lieu" class="form-control" value="${mission.lieu}" />
+									</div>
 								</div>
 								
 								<div class="form-group">
 									<label for="tarif" class="col-sm-2 control-label">Tarif</label>
-									<input type="text" name="tarif" value="${mission.tarif}" />
+									<div class="col-sm-10">
+										<input type="text" name="tarif" id="tarif" class="form-control" value="${mission.tarif}" />
+									</div>
 								</div>
 								
 								<div class="form-group">
 									<label for="description" class="col-sm-2 control-label">description</label>
-									<textarea name="description">${mission.description}</textarea>
+									<div class="col-sm-10">
+										<textarea name="description" id="description" class="form-control" rows="10">${mission.description}</textarea>
+									</div>
 								</div>
 								
 								
 								<div class="form-group">
 									<label for="competences" class="col-sm-2 control-label">Compétences</label>
 									<div class="col-sm-10">
-										<select multiple class="form-control" name="competences">
+										<select multiple class="form-control" name="competences" id="competences">
 											<c:forEach var="competence" items="${competenceslist}" >
 			
 												<c:set var="contains" value="false" />
