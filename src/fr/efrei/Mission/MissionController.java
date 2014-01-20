@@ -126,6 +126,12 @@ public class MissionController extends HttpServlet {
 						mm.save(p);
 					} else {
 						
+						HttpSession session = request.getSession();
+						User u = (User)session.getAttribute("user");
+						
+						Postulation p = mm.getPostulationByMissionInterimaire(mm.getMissionById(recordid), mm.getInterimaireById(u.getId()));
+						
+						mm.remove(p);
 					}
 					
 					response.sendRedirect("/Odecca4/app/mission?action=postuler");

@@ -31,11 +31,21 @@ public class MissionManager extends Bean {
 		return em.createNamedQuery("Mission.findByStatut", Mission.class).setParameter("statut", statut).getResultList();
 	}
 	
-	public void remove(Mission m) {
+public void remove(Mission m) {
 		
 		EntityTransaction tx = em.getTransaction();
         tx.begin();
        
+		em.remove(m);
+		
+		tx.commit();
+	}
+
+	public void remove(Postulation m) {
+		
+		EntityTransaction tx = em.getTransaction();
+	    tx.begin();
+	   
 		em.remove(m);
 		
 		tx.commit();
@@ -103,6 +113,11 @@ public void save(Mission m) {
 	
 	public List<Postulation> getPostulationByMission(Mission m) {
 		return em.createNamedQuery("Postulation.findByMission", Postulation.class).setParameter("mission", m).getResultList();
+	}
+	
+	public List<Postulation> getPostulationByStatutInterimaire(String statut, Interimaire i) {
+		
+		return em.createNamedQuery("Postulation.findByStatutInterimaire", Postulation.class).setParameter("interimaire", i).setParameter("statut", statut).getResultList();
 	}
 	
 	public List<Mission> getPostulation(int userid) {

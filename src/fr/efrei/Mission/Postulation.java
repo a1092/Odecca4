@@ -23,7 +23,8 @@ import fr.efrei.Interimaire.Interimaire;
 @NamedQueries({
 	@NamedQuery(name = "Postulation.findAll", query = "SELECT p FROM Postulation p"),
 	@NamedQuery(name = "Postulation.findByMission", query = "SELECT p FROM Postulation p WHERE p.mission = :mission"),
-	@NamedQuery(name = "Postulation.findByMissionInterimaire", query = "SELECT p FROM Postulation p WHERE p.mission = :mission AND p.interimaire = :interimaire")})
+	@NamedQuery(name = "Postulation.findByMissionInterimaire", query = "SELECT p FROM Postulation p WHERE p.mission = :mission AND p.interimaire = :interimaire"),
+	@NamedQuery(name = "Postulation.findByStatutInterimaire", query = "SELECT p FROM Postulation p WHERE p.mission.statut = :statut AND p.interimaire = :interimaire")})
 
 
 public class Postulation {
@@ -33,11 +34,11 @@ public class Postulation {
     @Column(name = "postulationid")  
     private int id;
 
-	@ManyToOne (cascade = CascadeType.ALL)
+	@ManyToOne
 	@PrimaryKeyJoinColumn(name="interimaireid", referencedColumnName="ID")
     private Interimaire interimaire;
 	
-	@ManyToOne (cascade = CascadeType.ALL)
+	@ManyToOne
 	@PrimaryKeyJoinColumn(name="missionid", referencedColumnName="ID")
     private Mission mission;
 	

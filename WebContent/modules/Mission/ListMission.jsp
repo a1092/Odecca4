@@ -42,30 +42,58 @@
 										<td>${mission.statut}</td>
 										<td>
 											<c:if test="${sessionScope.user.role == 'INTER'}">
-											<c:forEach var="postulation" items="${mission.postulations}" >
-												${postulation.interimaire.id }
-											</c:forEach>
-											<a href="?action=postuler&recordid=${mission.id}&postuler=true">
-												<button type="button" class="btn btn-success btn-sm">
-													Postuler
-												</button>
-											</a>
+											
+												
+												<c:set var="contains" value="false" />
+												<c:forEach var="postulation" items="${mission.postulations}" >
+													<c:if test="${postulation.interimaire.id eq sessionScope.user.id}">
+												  	  <c:set var="contains" value="true" />
+												  	</c:if>
+												</c:forEach>
+												
+												<c:choose>
+											     	 <c:when test="${contains}">
+												    	<a href="?action=postuler&recordid=${mission.id}&postuler=false">
+															<button type="button" class="btn btn-danger btn-sm">
+																Depostuler
+															</button>
+														</a>
+												     </c:when>
+												
+												      <c:otherwise>
+												      	<a href="?action=postuler&recordid=${mission.id}&postuler=true">
+															<button type="button" class="btn btn-success btn-sm">
+																Postuler
+															</button>
+														</a>
+												      </c:otherwise>
+												</c:choose>
+												
+											
+											
+											
 											</c:if>
+											
 											<a href="?action=view&recordid=${mission.id}">
 												<button type="button" class="btn btn-info btn-sm">
 													<span class="glyphicon glyphicon-eye-open"></span>
 												</button>
 											</a>
+											
+											<c:if test="${sessionScope.user.role != 'INTER'}">
 											<a href="?action=edit&recordid=${mission.id}">
 												<button type="button" class="btn btn-warning btn-sm">
 													<span class="glyphicon glyphicon-pencil"></span>
 												</button>
 											</a>
+											</c:if>
+											<c:if test="${sessionScope.user.role != 'INTER'}">
 											<a href="?action=delete&recordid=${mission.id}">
 												<button type="button" class="btn btn-danger btn-sm">
 													<span class="glyphicon glyphicon-remove"></span>
 												</button>
 											</a>
+											</c:if>
 										</td>
 									</tr>
 									</c:forEach>
