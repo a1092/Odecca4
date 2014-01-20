@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="/view/header.jsp" %>  
 
 			<div class="row">
@@ -15,7 +16,31 @@
 									<h3 class="panel-title">Informations personnelles</h3>
 								</div>
 								<div class="panel-body">
-									<p>${interimaire.adresse}</p>
+									<dl class="dl-horizontal">
+  										<dt>Identifiant</dt>
+  										<dd>${interimaire.user.login}</dd>
+									</dl>
+									<dl class="dl-horizontal">
+  										<dt>Email</dt>
+  										<dd>${interimaire.user.email}</dd>
+									</dl>
+									<dl class="dl-horizontal">
+  										<dt>Date de naissance</dt>
+  										<dd><fmt:formatDate value="${interimaire.naissance}" pattern="dd/MM/yyyy" /></dd>
+									</dl>
+									<dl class="dl-horizontal">
+  										<dt>Adresse</dt>
+  										<dd>${interimaire.adresse}</dd>
+									</dl>
+									<dl class="dl-horizontal">
+  										<dt>Qualification</dt>
+  										<dd>
+  											<ul class="list-unstyled">
+  												<li>${mission.competences}</li>
+  												<li>${mission.competences}</li>
+  											</ul>
+  										</dd>
+									</dl>
 								</div>
 							</div>
 

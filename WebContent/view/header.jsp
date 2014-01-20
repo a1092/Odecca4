@@ -47,8 +47,6 @@
             <ul class="dropdown-menu">
               <li><a href="/Odecca4/app/account">Voir la liste</a></li>
               <li><a href="/Odecca4/app/account?action=new">Ajouter une nouvelle</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Nouveau lien</a></li>
             </ul>
           </li>
           <li class="dropdown">

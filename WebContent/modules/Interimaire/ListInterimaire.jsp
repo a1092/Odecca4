@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="/view/header.jsp" %>  
 
 			<div class="row">
@@ -30,7 +31,7 @@
 										<td>${interimaire.id}</td>
 										<td>${interimaire.user.firstname}</td>
 										<td>${interimaire.user.lastname}</td>
-										<td>${interimaire.naissance}</td>
+										<td><fmt:formatDate value="${interimaire.naissance}" pattern="dd/MM/yyyy" /></td>
 										<td><span class="label label-success">${interimaire.statut}</span></td>
 										<td><span class="badge">{interimaire.nbmissions}</span></td>
 										<td>
